@@ -58,3 +58,22 @@ Hot restart: Restart aplikasi dari awal (self explanatory)
 3. change main.dart colorscheme to blue
 4. edit menu.dart's myhomepage, add class infocard, class itemhomepage
 5. add list itemhomepage at myhomepage, add class itemcard
+
+# Tugas 8
+##  Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement() pada Flutter. Dalam kasus apa sebaiknya masing-masing digunakan pada aplikasi Football Shop kamu?
+Navigator.push() menambahkan page baru di atas page sekarang, dan kita bisa kembali ke page sekarang nanti. Navigator.pushReplacement() mengganti page sekarang dengan page baru, jadi kita tidak bisa kembali ke page sekarang.
+Pada Football Shop ini, Navigator.push() digunakan untuk page yang memungkinkan user untuk "Back" nanti, sedangkan Navigator.pushReplacement() digunakan sebaiknya digunakan untuk page seperti save product.
+## Bagaimana kamu memanfaatkan hierarchy widget seperti Scaffold, AppBar, dan Drawer untuk membangun struktur halaman yang konsisten di seluruh aplikasi?
+Pada Football Shop ini, setiap halaman menggunakan Scaffold (untuk kerangka utama). AppBar (page title, navbar, etc) digunakan bila seperlunya saja, untuk kasus ini title pada menu.dart dan form.dart. Drawer digunakan untuk seluruh halaman, dan cukup memanngil LeftDrawer().
+## Dalam konteks desain antarmuka, apa kelebihan menggunakan layout widget seperti Padding, SingleChildScrollView, dan ListView saat menampilkan elemen-elemen form? Berikan contoh penggunaannya dari aplikasi kamu.
+1. Padding: Memberikan jarak. Jika jarak antarteks terlalu 'padat', aplikasi susah dibaca. e.g. padding pada form
+2. SingleChildScrollView: Membuat agar page memiliki fitur scroll, jika isi page terlalu banyak (tinggal scroll down). e.g. form.dart
+3. ListView: Mirip Column tapi tak perlu adanya SingleChildScrollView, dan juga mendukung lazy loading. e.g. left_drawer.dart
+## Bagaimana kamu menyesuaikan warna tema agar aplikasi Football Shop memiliki identitas visual yang konsisten dengan brand toko?
+Set colorScheme pada theme di main.dart
+## Implementasi Checklist
+1. left_drawer.dart on lib/widgets
+2. routing to drawer
+3. add drawer to menu.dart
+4. productlist_form.dart on lib
+5. create product routing on menu.dart
